@@ -1,1 +1,3 @@
-bruh
+import discordKaliBot
+
+discordKaliBot.SendMsg("Brooooo")
