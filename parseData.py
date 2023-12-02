@@ -9,7 +9,7 @@ import re
 
 # Read AQ Data
 airQData = pd.read_csv(r"SIOTData.Air Quality Data.csv")
-airQData = airQData.drop(columns=['PM2.5', 'device', '_id'], axis=1)
+airQData = airQData.drop(columns=['PM2.5', 'device', '_id'], axis=1) # There is another column called PM2_5
 
 # Find peaks (Smoking Events)
 peaks = sp.signal.find_peaks(airQData.PM2_5, distance=10, prominence=50)

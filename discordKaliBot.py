@@ -8,6 +8,7 @@ def SendMsg(msg):
     async def on_ready():
         print("We good to go!")
         uzux = await client.fetch_user("138510803610370048")
+        # uzux = await client.fetch_user("320660152770494468") # Tristans
         await uzux.send(msg)
         await client.close()
 
