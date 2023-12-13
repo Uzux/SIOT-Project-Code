@@ -6,9 +6,10 @@ import scipy as sp
 import matplotlib.pyplot as plt
 from labellines import labelLine, labelLines
 import re
+from datetime import datetime, timedelta
 
 # Read AQ Data
-airQData = pd.read_csv(r"SIOTData.Air Quality Data.csv")
+airQData = pd.read_csv(r"SIOTData Before Intervention (9 days).csv")
 airQData = airQData.drop(columns=['PM2.5', 'device', '_id'], axis=1) # There is another column called PM2_5
 
 # Find peaks (Smoking Events)
@@ -44,12 +45,12 @@ smokingEvents.insert(2, "SEvent", tsPeaks)
 # print(smokingEvents)
 
 # Granulating browser activities
-for ind in smokingEvents.index:
-    m = re.search('- (.+?) - Google Chrome', str(smokingEvents['Name'][ind]))
-    if m:
-        arrName = str(m.group(0)).split("- ")
-        arrName.reverse()
-        smokingEvents['Process'][ind] = str(arrName[1] + "- " + arrName[0])
+# for ind in smokingEvents.index:
+#     m = re.search('- (.+?) - Google Chrome', str(smokingEvents['Name'][ind]))
+#     if m:
+#         arrName = str(m.group(0)).split("- ")
+#         arrName.reverse()
+#         smokingEvents['Process'][ind] = str(arrName[1] + "- " + arrName[0])
 
 # Find unique processes and count their frequency
 uniqueProcesses = smokingEvents['Process'].value_counts()

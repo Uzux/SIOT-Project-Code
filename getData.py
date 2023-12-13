@@ -18,9 +18,8 @@ def main(toplim, botlim):
     results = list(results)
     airQData = pd.DataFrame(results)
 
-    # Parse Data - Remove Datapoints that age is greater than an hour
+    # Parse Data - Remove Datapoints that age is older than an hour
     airQData = airQData[airQData.timestamp >= (airQData.timestamp.max() - pd.Timedelta(hours=1).floor('H'))]
-    # print(airQData)
 
     # Find Peaks
     peaks = sp.signal.find_peaks(airQData.PM2_5, distance=10, prominence=50)
