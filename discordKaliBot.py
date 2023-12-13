@@ -3,19 +3,6 @@ from discord.ext import commands
 import asyncio
 import getData
 
-# def SendMsg(msg):
-#     client = commands.Bot(command_prefix="!", intents=discord.Intents.default())
-#     @client.event
-#     async def on_ready():
-#         print("We good to go!")
-#         uzux = await client.fetch_user("138510803610370048")
-#         await uzux.send(msg)
-#         await client.close()
-#         print("closed")
-
-#     client.run("MTE3OTg3MDE1ODQxMjU5OTM0Nw.GhnLYW.a_uE1v7Jj8ilHFrpNvkbHGUDsKyMdOlQhVdtFI")
-#     client.close()
-
 client = commands.Bot(command_prefix="!", intents=discord.Intents.default())
 @client.event
 async def on_ready():
@@ -31,4 +18,4 @@ async def on_ready():
     except KeyboardInterrupt:
         print("Stopped")
 
-client.run("MTE3OTg3MDE1ODQxMjU5OTM0Nw.GhnLYW.a_uE1v7Jj8ilHFrpNvkbHGUDsKyMdOlQhVdtFI")
+client.run("INPUT TOKEN HERE")

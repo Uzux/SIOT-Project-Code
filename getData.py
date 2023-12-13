@@ -5,7 +5,7 @@ import scipy as sp
 import random
 
 # API connection to MongoDB
-myclient = pymongo.MongoClient("mongodb+srv://uzux:pokemon9@siot.bbvtbv5.mongodb.net/")
+myclient = pymongo.MongoClient("LINK TO MONGODB DATABASE HERE")
 dblist = myclient.list_database_names()
 if "SIOTData" in dblist:
     print("The database exists.")
@@ -48,18 +48,3 @@ def main(toplim, botlim):
         return("You have puffed ur vape too many times... " + str(countPeaks) + " times in the last hour to be exact >:C. \n" + random.choice(messages))
     else:
         return
-
-# # Discord Bot Startup
-# client = commands.Bot(command_prefix="!", intents=discord.Intents.default())
-# @client.event
-# async def on_ready():
-#     print("We good to go!")
-#     try:
-#         while True:
-#             msg = main()
-#             uzux = await client.fetch_user("138510803610370048")
-#             await uzux.send(msg)
-#             await asyncio.sleep(60)
-#     except KeyboardInterrupt:
-#         print("Stopped")
-# client.run("MTE3OTg3MDE1ODQxMjU5OTM0Nw.GhnLYW.a_uE1v7Jj8ilHFrpNvkbHGUDsKyMdOlQhVdtFI")
